@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!------------ GOOGLE FONT ------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+    <!------------ THREE.JS ------------>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@v0.187.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.187.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!------------ NAV ------------>
+
+    <section class="sec_nav">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </section>
+    <!------------ HOME ------------>
+
+    <section id="home" class="sec_home page active">
+      <h1>The Little <br />Souls</h1>
+      <p>
+        You are a little sould in a vast world.<br />And somewhere, someone will
+        carry the memory that you were here.
+      </p>
+      <button id="btnEnter" class="btn">Enter The Garden</button>
+    </section>
+
+    <!------------ PROFILE ------------>
+    <section id="profile" class="sec_profile page">
+      <p>Your Soul Name</p>
+      <input type="text" name="" id="btnName" class="btn btn_name" />
+      <p
+        id="txt_warnName"
+        class="txt_warn"
+        style="
+          color: rgb(255, 189, 189);
+          margin-top: 1rem;
+          font-size: var(--text-sm);
+        "
+      ></p>
+      <p style="margin-top: 3rem">Choose Your Soul Color</p>
+      <div class="soul_color btn_color">
+        <input type="color" name="" id="btnColor" class="btn btn_color" />
+      </div>
+
+      <p id="txt_warnColor" class="txt_warn"></p>
+      <button id="btnWander" class="btn">Begin Wandering</button>
+    </section>
+
+    <!------------ GARDEN ------------>
+    <section id="garden" class="sec_garden page">
+      <div class="garden">
+        <!------------ BG SOUND ------------>
+        <audio id="bgAmbient" loop preload="auto">
+          <source src="src/audio/bgMusic.wav" type="audio/wav" />
+        </audio>
+
+        <button class="btn btn_plantMain">Plant Your Memory</button>
+        <!------------ Plant the memory ------------>
+        <div class="message">
+          <p>Plant your memory</p>
+          <p>
+            A name, a little story, or something you never got to say. The
+            Garden will keep it safe.
+          </p>
+          <input
+            type="text"
+            placeholder="Who is this memory for?"
+            maxlength="30"
+            class="btn btn_userMemoryName"
+          />
+          <textarea
+            name=""
+            id="messageFromUser"
+            placeholder="Write your little memory here ..."
+            maxlength="180"
+          ></textarea>
+          <p class="txt_warn txt_warnPlant"></p>
+          <input type="color" name="" id="" class="flowerColor" />
+          <button class="btn btn_plant">Plant My Memory</button>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
